@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+<script>
+function validate()
+{
+var un=document.done.uname.value;
+var pw=document.done.pword.value;
+var ml=document.done.email.value;
+var pn=document.done.pno.value;
+var cp=document.done.cp.value;
+var u=0;l=0;s=0;n=0;x=0;
+if(un===" "||un===null)
+alert("un not empty")
+if(un.length<5 || un.length>20)
+alert("name should follow the constraint")
+if(pw===" "||pw===null)
+alert("password should not be empty")
+if(pw.length<6 || pw.length>15)
+alert("ps should follow the constraint")
+if(pn===" "||pn===null)
+alert("un not empty")
+if(pn.length!==10)
+alert("no should follow the constraint")
+if(ml===" "||ml===null)
+alert("mail should not be empty")
+if(cp===" "||cp===null)
+alert("cp not empty")
+for(i=0;i<un.length;i++){
+if(((un.charCodeAt(i)>=65) && (un.charCodeAt(i)<=90))||((un.charCodeAt(i)>=97) && (un.charCodeAt(i)<=122)))
+continue;
+else
+alert("username must contain alphabets");
+}
+for(i=0;i<pw.length;i++){
+if(pw.charCodeAt(i)>=65 && pw.charCodeAt(i)<=90)
+u++;
+else if(pw.charCodeAt(i)>=97 && pw.charCodeAt(i)<=122)
+l++;
+else if(pw.charCodeAt(i)>=48 && pw.charCodeAt(i)<=57)
+n++;
+else
+s++;
+}
+if(u==0 || l==0 || s==0 || n==0)
+alert("password");
+for(i=0;i<pw.length;i++)
+{if(pw[i]!=cp[i]){
+alert("check the password");
+break;}}
+for(i=0;i<pn.length;i++)
+{
+if(pn.charCodeAt(i)>=48 && pn.charCodeAt(i)<=57)
+continue;
+else
+alert("enter valid phone no");
+}
+if((ml.endswith("@gmail.com"))||(ml.endswith("@outlook.com")))
+x=1;
+else
+alert("wrong pno");
+}
+</script>
+<div class ="text">
+<form name="done" action=" " method="post">
+<label>username</label><br>
+<input type="text" name="uname" id="uname" placeholder="enter your name" height="20px" size="40px" required><br><br>
+<label>password</label><br>
+<input type="password" name="pword" id="pword" placeholder="enter your password" height="20px" size="40px" required><br><br>
+<label>Email</label><br>
+<input type="email" name="email" id="email" placeholder="enter your id" height="20px" size="40px" required><br><br>
+<label>phonenumber</label><br>
+<input type="text" name="pno" id="pno" placeholder="enter your phone number" height="20px" size="40px" required><br><br>
+<label>confirmpassword</label><br>
+<input type="text"  name ="cp" id="cp" placeholder="enter your correct password" height="20px" size="40px" required><br><br>
+<button onclick="validate()">submit</button>
+</form></div>
+</body>
+</html>
+
+
+
+
+
+
